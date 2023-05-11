@@ -1,0 +1,11 @@
+.meuContainer{
+  background-color: #333;
+  color: #cecef7;
+  border: 1px solid #111;
+}
+
+.meuConteudo{
+  color: #fff;
+  background-color: #333;
+  margin: 0;
+}
