@@ -1,37 +1,29 @@
-import './App.css';
-import HelloWorld from './components/HelloWorld'
-import SayMyName from './components/SayMyName'
-import Pessoa from './components/Pessoa'
-import List from './components/List'
-import Texts from './components/Texts'
-import ListItem from './components/ListItem';
-import Evento from './components/Evento';
-import Form from './components/Form';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import Empresa from "./pages/Empresa";
+import Contato from "./pages/Contato";
+import Examples from "./pages/AppAllExamples";
+import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
 
 function App() {
 
-  const name = "Gio";
-  
   return (
-    <div className="App">
-      <h1>React {name} v0</h1>
-      <HelloWorld />
-      <SayMyName name={name} />
-      <Pessoa 
-        name="Gio" 
-        photo="https://via.placeholder.com/150" 
-        age="31" />
+    <>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/empresas" element={<Empresa/>} />
+          <Route path="/contatos" element={<Contato/>} />
+          <Route path="/exemplos" element={<Examples/>} />
+      </Routes>
+      <Footer/>
 
+      </Router>
 
-      <Texts text='Meus carros' />
-      <ListItem brand="Ferrari F40" year={2023}/>
-      <ListItem brand="Audi TT" year={2022}/>
-      <ListItem /> 
-
-      <Evento sinal={"!!!!!"}/>
-
-      <Form />
-    </div>
+    </>
+ 
   );
 }
 
